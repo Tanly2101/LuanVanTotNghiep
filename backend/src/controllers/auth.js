@@ -1,36 +1,31 @@
-import * as authService from '../services/auth'
+// import jwt from "jsonwebtoken";
 
-export const register = async (req, res) => {
-    const { nameTK, phone, password } = req.body
-    try {
-        if (!nameTK || !phone || !password) return res.status(400).json({
-            err: 1,
-            msg: 'Missing inputs !'
-        })
-        const response = await authService.registerService(req.body)
-        return res.status(200).json(response)
+// // Xử lý đăng ký
+// export const register = (req, res) => {
+//   // Xử lý đăng ký
+//   const { id } = req.body; // Giả sử khachhangId được gửi từ client
+//   if (!id) {
+//     return res.status(400).json({ message: "Khách hàng ID là bắt buộc" });
+//   }
 
-    } catch (error) {
-        return res.status(500).json({
-            err: -1,
-            msg: 'Fail at auth controller: ' + error
-        })
-    }
-}
-export const login = async (req, res) => {
-  const { phone, password } = req.body
-  try {
-      if ( !phone || !password) return res.status(400).json({
-          err: 1,
-          msg: 'Missing inputs !'
-      })
-      const response = await authService.loginService(req.body)
-      return res.status(200).json(response)
+//   const token = jwt.sign({ id }, "your-secret-key", {
+//     expiresIn: "1h",
+//   });
+//   res.cookie("token", token, { httpOnly: true, maxAge: 3600000 }); // 1 giờ
+//   res.json({ success: true });
+// };
 
-  } catch (error) {
-      return res.status(500).json({
-          err: -1,
-          msg: 'Fail at auth controller: ' + error
-      })
-  }
-}
+// // Xử lý đăng nhập
+// export const login = (req, res) => {
+//   // Xử lý đăng nhập
+//   const { id } = req.body; // Giả sử khachhangId được gửi từ client
+//   if (!id) {
+//     return res.status(400).json({ message: "Khách hàng ID là bắt buộc" });
+//   }
+
+//   const token = jwt.sign({ id }, "your-secret-key", {
+//     expiresIn: "1h",
+//   });
+//   res.cookie("token", token, { httpOnly: true, maxAge: 3600000 }); // 1 giờ
+//   res.json({ success: true });
+// };

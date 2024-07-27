@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { InputReadOnly, InputFrom } from "../../Component"
 import user from "../../assets/img/user.png"
 const EditAccount = () => {
+  
   const [invalidFields, setInvalidFields] = useState([])
   return (
     <div className='flex flex-col w-full  items-center'>

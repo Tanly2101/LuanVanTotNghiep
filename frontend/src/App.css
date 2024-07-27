@@ -11,7 +11,7 @@ header{
   position: relative;
   z-index: 1000;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   
@@ -114,11 +114,8 @@ margin-bottom: 1.25rem;
   align-items: center;
 
 }
-.Box-search{
-  width: 900px;
-}
+
 .Box-search input{
-  width: 850px;
   border-radius: 20px;
   padding: 10px 20px;
   outline-style: solid;
@@ -632,9 +629,9 @@ footer .wave#wave4{
   padding: 15px;
 
 }
-img{
+/* img{
   width: 100%;
-}
+} */
 @keyframes scroll {
   0% {
 transform: translateX(0);
@@ -675,6 +672,7 @@ background: linear-gradient(to right, rgb(157 159 161) 0%, rgba(255, 255, 255, 0
 
 }
 .product{
+  
   height: 600px;
 }
 .product .card{
@@ -691,10 +689,7 @@ background: linear-gradient(to right, rgb(157 159 161) 0%, rgba(255, 255, 255, 0
   transition: 0.3s ease-in-out;
 
 }
-.flex-card{
-  display: flex;
-  justify-content: space-around;
-}
+
 .product .card:hover{
   height: 430px;
 
@@ -704,7 +699,6 @@ background: linear-gradient(to right, rgb(157 159 161) 0%, rgba(255, 255, 255, 0
   width: 260px;
   height: 260px;
   top: -60px;
-  left: 20px;
   z-index: 1;
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 
@@ -787,8 +781,6 @@ opacity: 0;
   display: flex;
   overflow-x: auto;
   padding: 0 30px;
-  
-
   justify-content: space-between;
   scroll-behavior: smooth;
   
@@ -803,7 +795,7 @@ display: none;
 }
 
 .ListImgProduct img{
-  border-radius: 100%;
+  
   margin:20px auto 25px ;
 }
 .ListImgProduct span{

@@ -19,11 +19,11 @@ body{
 .Yie-List{
     width: 300px;
     border: 2px solid black;
-    height: 445px;
+    height: 400px;
 }
 .card-yie {
     display: flex;
-    margin-top: 15px;
+    
 }
 .card-yie button{
     margin-left: auto;

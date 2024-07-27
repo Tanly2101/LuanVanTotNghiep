@@ -1,25 +1,60 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import 'glider-js/glider.min.css';
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
-import { Provider } from 'react-redux';
-import App from './App';
-import { PersistGate } from 'redux-persist/integration/react'
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import "glider-js/glider.min.css";
+// import { BrowserRouter } from "react-router-dom";
+// import "./index.css";
 
-import reduxStore from './redux';
+// import App from "./App";
+// // import { PersistGate } from "redux-persist/integration/react";
+// // import { Provider } from "react-redux";
+// // import reduxStore from "./redux";
+// import { AppProvider } from "./Context/ContextSearch";
+// import { PaginationProvider } from "./Context/PaginationContext";
+// import { ProductProvider } from "./Context/ProductContext";
 
-const { store, persistor } = reduxStore()
+// // const { store, persistor } = reduxStore();
+// // {persistor={persistor}}
+// // store={store}
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   // <Provider>
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//   // </Provider>
+//   // <PersistGate loading={null}>
+
+//   // </PersistGate>
+//   <BrowserRouter>
+//     <AppProvider>
+//       <PaginationProvider>
+//         <ProductProvider>
+//           <App />
+//         </ProductProvider>
+//       </PaginationProvider>
+//     </AppProvider>
+//   </BrowserRouter>
+// );
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "glider-js/glider.min.css";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import { AppProvider } from "./Context/ContextSearch";
+import { PaginationProvider } from "./Context/PaginationContext";
+import { ProductProvider } from "./Context/ProductContext";
+import { AuthProvider } from "./Context/AuthContext";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store} >
-    <PersistGate loading={null} persistor={persistor} >
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </PersistGate>
-  </Provider>
-
+  <BrowserRouter>
+    <AppProvider>
+      <PaginationProvider>
+        <ProductProvider>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </ProductProvider>
+      </PaginationProvider>
+    </AppProvider>
+  </BrowserRouter>
 );
-
